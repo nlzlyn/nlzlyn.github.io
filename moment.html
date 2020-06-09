@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Moment</title>
+<link rel="icon" href="images/moment/favicon.ico">
+<link href="css/moment.css" rel="stylesheet" type="text/css">
+<script src="css/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo" id="logo"><a href="#start"><img src="images/logo.png" alt="logo"/></a></div>
+			<div class="nav">
+				<ul>
+					<li><a href="#core" class="opt">主要界面</a><div class="select-line"></div></li>
+					<li><a href="#other" class="opt">其他界面</a><div class="select-line"></div></li>
+					<li><a href="#demo" class="opt">功能演示</a><div class="select-line"></div></li>
+					<li><a href="main.html" class="opt">返回主页</a><div class="select-line"></div></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="firstPage" id="start">
+		<div class="container1">
+			<img src="images/moment/01.jpg"/>
+			<img src="images/moment/02.jpg" id="core"/>
+			<img src="images/moment/03.jpg"/>
+			<img src="images/moment/04.jpg"/>
+			<img src="images/moment/05.jpg" id="other"/>
+			<img src="images/moment/06.jpg"/>
+			<img src="images/moment/07.jpg"/>
+			<img src="images/moment/08.jpg"/>
+			<div class="demo" id="demo">
+				<img src="images/moment/09.jpg">
+				<video controls="controls">
+					<source src="video/Moment.mp4" type="video/mp4">
+				</video>
+			</div>
+			<img src="images/moment/10.jpg"/>
+		</div>
+	</div>
+</body>
+<script>	
+	var opt = document.getElementsByClassName("opt");
+	var i;
+	for (i = 0; i < opt.length; i++) {
+		opt[i].index = i;
+		opt[i].onmouseover = function(){
+			/*opt[this.index].style.color = "#F3034F";*/
+			document.getElementsByClassName("select-line")[this.index].style.display = "block";
+		}	
+		opt[i].onmouseout = function(){
+			/*opt[this.index].style.color = "FFF";*/
+			document.getElementsByClassName("select-line")[this.index].style.display = "none";
+		}
+	}
+	
+	
+	window.onscroll = function() {
+	//$(window).scroll = function(){
+	  //为了保证兼容性，这里取两个值，哪个有值取哪一个
+	  //scrollTop就是触发滚轮事件时滚轮的高度
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		//var core_top = $("#core").offset().top;
+		//var other_top = $("#other").offset().top;
+		//var demo_top = $("#demo").offset().top;
+		
+		if(scrollTop >= 1109 & scrollTop < 4108){
+			document.getElementsByClassName("opt")[0].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[1].style.color = "#FFF";
+			document.getElementsByClassName("opt")[2].style.color = "#FFF";
+			document.getElementsByClassName("opt")[3].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "block";
+			document.getElementsByClassName("select-line")[1].style.display = "none";
+			document.getElementsByClassName("select-line")[2].style.display = "none";
+			document.getElementsByClassName("select-line")[3].style.display = "none";			
+		} else if(scrollTop >= 4108 & scrollTop < 8106) {
+			document.getElementsByClassName("opt")[0].style.color = "#FFF";
+			document.getElementsByClassName("opt")[1].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[2].style.color = "#FFF";
+			document.getElementsByClassName("opt")[3].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "none";
+			document.getElementsByClassName("select-line")[1].style.display = "block";
+			document.getElementsByClassName("select-line")[2].style.display = "none";
+			document.getElementsByClassName("select-line")[3].style.display = "none";			
+		} else if(scrollTop >= 8106){
+			document.getElementsByClassName("opt")[0].style.color = "#FFF";
+			document.getElementsByClassName("opt")[1].style.color = "#FFF";
+			document.getElementsByClassName("opt")[2].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[3].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "none";
+			document.getElementsByClassName("select-line")[1].style.display = "none";
+			document.getElementsByClassName("select-line")[2].style.display = "block";
+			document.getElementsByClassName("select-line")[3].style.display = "none";
+		} else {
+			for (var i; i<4; i++){
+				document.getElementsByClassName("opt")[i].style.color = "#F3034F";
+				document.getElementsByClassName("select-line")[i].style.display = "none";
+			}			
+		}
+	}
+	
+</script>
+</html>
+

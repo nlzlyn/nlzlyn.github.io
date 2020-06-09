@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>印记</title>
+<link rel="icon" href="images/yinji/favicon.ico">
+<link href="css/yinji.css" rel="stylesheet" type="text/css">
+<script src="css/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo"><a href="#start"><img src="images/logo.png" alt="logo"/></a></div>
+			<div class="nav">
+				<ul>
+					<li><a href="#description" class="opt">项目背景</a><div class="select-line"></div></li>
+					<li><a href="#visual" class="opt">视觉设计</a><div class="select-line"></div></li>
+					<li><a href="#guideline" class="opt">规范文档</a><div class="select-line"></div></li>
+					<li><a href="#demo" class="opt">功能演示</a><div class="select-line"></div></li>
+					<li><a href="main.html" class="opt">返回主页</a><div class="select-line"></div></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="firstPage" id="start">
+		<div class="container1">
+			<img src="images/yinji/01.jpg"/>
+			<img src="images/yinji/02.jpg"/>
+			<img id="description" src="images/yinji/03.jpg"/>
+			<img src="images/yinji/04.jpg"/>
+			<img src="images/yinji/05.jpg"/>
+			<div>
+				<img src="images/yinji/06.jpg"/>
+				<video class="video_iterative" controls="controls">
+					<source src="video/iterative.mp4" type="video/mp4">
+				</video>
+			</div>
+			<img id="visual" src="images/yinji/07.jpg"/>
+			<img src="images/yinji/08.jpg"/>
+			<img src="images/yinji/09.jpg"/>
+			<img src="images/yinji/10.jpg"/>
+			<img src="images/yinji/11.jpg"/>
+			<img src="images/yinji/12.jpg"/>
+			<img src="images/yinji/13.jpg"/>
+			<div>
+				<img src="images/yinji/14.jpg"/>
+				<video class="me_iterative" controls="controls">
+					<source src="video/me_iterative.mp4" type="video/mp4">
+				</video>
+			</div>
+			<img src="images/yinji/15.jpg"/>
+			<img src="images/yinji/16.jpg"/>
+			<img src="images/yinji/17.jpg"/>
+			<img id="guideline" src="images/yinji/18.jpg"/>
+			<img src="images/yinji/19.jpg"/>
+			<img src="images/yinji/20.jpg"/>
+			<img src="images/yinji/21.jpg"/>
+			<img src="images/yinji/22.jpg"/>
+			<img src="images/yinji/23.jpg"/>
+			<img src="images/yinji/24.jpg"/>
+			<img src="images/yinji/25.jpg"/>
+			<div id="demo" class="demo">
+				<img src="images/yinji/26.jpg"/>
+				<video class="video" controls="controls">
+					<source src="video/yinji_information.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="demo">
+				<img src="images/yinji/27.jpg"/>
+				<video class="video" controls="controls">
+					<source src="video/yinji_text.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="demo">
+				<img src="images/yinji/28.jpg"/>
+				<video class="video" controls="controls">
+					<source src="video/yinji_video.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="demo">
+				<img src="images/yinji/29.jpg"/>
+				<video class="video" controls="controls">
+					<source src="video/yinji_history.mp4" type="video/mp4">
+				</video>
+			</div>
+			<img src="images/yinji/30.jpg"/>
+			
+
+		</div>
+	</div>
+</body>
+<script>	
+	var opt = document.getElementsByClassName("opt");
+	var i;
+	for (i = 0; i < opt.length; i++) {
+		opt[i].index = i;
+		opt[i].onmouseover = function(){
+			/*opt[this.index].style.color = "#F3034F";*/
+			document.getElementsByClassName("select-line")[this.index].style.display = "block";
+		}	
+		opt[i].onmouseout = function(){
+			/*opt[this.index].style.color = "FFF";*/
+			document.getElementsByClassName("select-line")[this.index].style.display = "none";
+		}
+	}
+	
+	window.onscroll = function() {
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		if(scrollTop >= 2109 & scrollTop < 6107){
+			document.getElementsByClassName("opt")[0].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[1].style.color = "#FFF";
+			document.getElementsByClassName("opt")[2].style.color = "#FFF";
+			document.getElementsByClassName("opt")[3].style.color = "#FFF";
+			document.getElementsByClassName("opt")[4].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "block";
+			document.getElementsByClassName("select-line")[1].style.display = "none";
+			document.getElementsByClassName("select-line")[2].style.display = "none";
+			document.getElementsByClassName("select-line")[3].style.display = "none";
+			document.getElementsByClassName("select-line")[4].style.display = "none";
+		} else if(scrollTop >= 6107 & scrollTop < 17103) {
+			document.getElementsByClassName("opt")[0].style.color = "#FFF";
+			document.getElementsByClassName("opt")[1].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[2].style.color = "#FFF";
+			document.getElementsByClassName("opt")[3].style.color = "#FFF";
+			document.getElementsByClassName("opt")[4].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "none";
+			document.getElementsByClassName("select-line")[1].style.display = "block";
+			document.getElementsByClassName("select-line")[2].style.display = "none";
+			document.getElementsByClassName("select-line")[3].style.display = "none";
+			document.getElementsByClassName("select-line")[4].style.display = "none";
+		} else if(scrollTop >= 17103 & scrollTop < 25099){
+			document.getElementsByClassName("opt")[0].style.color = "#FFF";
+			document.getElementsByClassName("opt")[1].style.color = "#FFF";
+			document.getElementsByClassName("opt")[2].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[3].style.color = "#FFF";
+			document.getElementsByClassName("opt")[4].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "none";
+			document.getElementsByClassName("select-line")[1].style.display = "none";
+			document.getElementsByClassName("select-line")[2].style.display = "block";
+			document.getElementsByClassName("select-line")[3].style.display = "none";
+			document.getElementsByClassName("select-line")[4].style.display = "none";
+		} else if(scrollTop >= 25099) {
+			document.getElementsByClassName("opt")[0].style.color = "#FFF";
+			document.getElementsByClassName("opt")[1].style.color = "#FFF";
+			document.getElementsByClassName("opt")[2].style.color = "#FFF";
+			document.getElementsByClassName("opt")[3].style.color = "#F3034F";
+			document.getElementsByClassName("opt")[4].style.color = "#FFF";
+			document.getElementsByClassName("select-line")[0].style.display = "none";
+			document.getElementsByClassName("select-line")[1].style.display = "none";
+			document.getElementsByClassName("select-line")[2].style.display = "none";
+			document.getElementsByClassName("select-line")[3].style.display = "block";
+			document.getElementsByClassName("select-line")[4].style.display = "none";
+		} else {
+			for (var i; i<4; i++){
+				document.getElementsByClassName("opt")[i].style.color = "#F3034F";
+				document.getElementsByClassName("select-line")[i].style.display = "none";
+			}			
+		}
+	}
+</script>
+</html>

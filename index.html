@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>李洋作品集</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="./css/trigger.css"/>
+		<style type="text/css">
+			.loading {
+				margin: 2rem 0 0 0;
+			}
+			.status {
+				position: relative;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				margin: 10px;
+			}
+			.status.online, .status.online:before {
+				background: #72ff7d;
+			}
+			.status.offline, .status.offline:before {
+				background: #ff4242;
+			}
+			.status.invisible, .status.invisible:before {
+				background: #42e5ff;
+			}
+			.status.idle, .status.idle:before {
+				background: #ffda72;
+			}
+			.status:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -5px;
+				top: -5px;
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				animation: pulse 1.5s infinite ease-in;
+			}
+			@keyframes pulse {
+				from {
+					transform: scale(0.5);
+					opacity: 1;
+				}
+				to {
+					transform: scale(1.5);
+					opacity: 0;
+				}
+			}		   
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				background-color: #000;
+				overflow: hidden;
+			}
+			#center {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.center {
+			  position: absolute;
+			  top: 50%;
+			  left: 50% ;
+			  z-index: 2;
+			  transform: translate(-50%, -50%);
+			}
+			.bg {
+			  width: 100%;
+			  height: 100vh;
+			  animation: opcity 0.5s linear;
+			  background:linear-gradient(#000,#311133);
+			  // background: url('../../assets/images/maskeBG.jpg') no-repeat center;
+			  background-size: cover;
+			  z-index: -99;
+			}
+			.bg::after {
+			  content:'';
+			  width: 100%;
+			  height: 100%;
+			  position: absolute;
+			  left: 0;
+			  top: 0;
+			  background:inherit;
+			  filter: blur(3px);
+			  opacity: .7;
+			}
+			@keyframes opcity {
+			  0% { transform: translateX(-100%) }
+			  100% {  transform: translateX(0%) }
+			}
+		</style>
+	</head>
+	<body onclick="handleClick()">
+		<div id="center" class="center">
+			<div class="wrapper">
+				<div class="slash"></div>
+				<div class="text">
+							<div class="text--backing">LI<span style="color: #D81500;">Y</span>ANG</div>
+							<div class="text--left">
+									<div class="inner">LI<span style="color: #D81500;">Y</span>ANG</div>
+							</div>
+							<div class="text--right">
+									<div class="inner">LI<span style="color: #D81500;">Y</span>ANG</div>
+							</div>
+					</div>
+			</div>
+			<div class="loading">
+				<span class="status online"></span>
+				<span class="status invisible"></span>
+				<span class="status idle"></span>
+				<span class="status offline"></span>
+			</div>
+		</div>
+		<div class="bg"></div>
+		<script type="text/javascript">
+			let handleClick = function() {
+				window.location.href = "main.html"
+			}
+		</script>
+	</body>
+</html>
